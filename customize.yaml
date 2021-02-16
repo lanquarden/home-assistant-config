@@ -1,0 +1,69 @@
+# Thermostats
+climate.neq1521926:
+    friendly_name: Thermostat Living Room
+climate.neq1521913:
+    friendly_name: Thermostat Attic
+climate.neq1521927:
+    friendly_name: Thermostat Master Bed Room
+climate.neq1521928:
+    friendly_name: Thermostat Kids Bed Room
+sensor.neq1521913_temperature:
+    friendly_name: Attic
+    hidden: true
+sensor.neq1521926_temperature:
+    friendly_name: Living Room
+    hidden: true
+sensor.neq1521927_temperature:
+    friendly_name: Master Bed Room
+    hidden: true
+sensor.neq1521928_temperature:
+    friendly_name: Kids Bed Room
+    hidden: true
+sensor.neq1521913_humidity:
+    friendly_name: Attic
+    hidden: true
+sensor.neq1521926_humidity:
+    friendly_name: Living Room
+    hidden: true
+sensor.neq1521927_humidity:
+    friendly_name: Master Bed Room
+    hidden: true
+sensor.neq1521928_humidity:
+    friendly_name: Kids Bed Room
+    hidden: true
+sensor.neq1521913_absolute:
+    hidden: true
+sensor.neq1521926_absolute:
+    hidden: true
+sensor.neq1521927_absolute:
+    hidden: true
+sensor.neq1521928_absolute:
+    hidden: true
+sensor.dark_sky_absolute:
+    hidden: true
+
+# Valves
+climate.oeq0238497:
+    friendly_name: Valve Attic
+climate.oeq0238491:
+    friendly_name: Valve Hall
+climate.oeq0238467:
+    friendly_name: Valve Bath Room
+climate.oeq0238208:
+    friendly_name: Valve Guest Bed Room
+climate.oeq0238216:
+    friendly_name: Valve Kids Bed Room
+climate.neq1411046:
+    friendly_name: Valve Kitchen
+climate.neq1411058:
+    friendly_name: Valve Living Room Left
+climate.neq1411004:
+    friendly_name: Valve Living Room Right
+climate.oeq0238454:
+    friendly_name: Valve Master Bath Room
+climate.neq1413070:
+    friendly_name: Valve Master Bed Room
+
+# Switch
+switch.neq0112502:
+    friendly_name: Boiler switch

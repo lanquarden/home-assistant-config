@@ -1,0 +1,124 @@
+
+######### MAIN #########
+homeassistant:
+    # authentication
+    auth_providers:
+      - type: trusted_networks
+        trusted_networks:
+          - 192.168.1.0/24
+        allow_bypass_login: true
+      - type: homeassistant
+    # location
+    latitude: !secret home_latitude
+    longitude: !secret home_longitude
+    # elevation
+    elevation: !secret home_elevation
+    # temperature unit
+    unit_system: metric
+    # time zone
+    time_zone: Europe/Madrid
+    # name
+    name: Home
+
+    # customize
+    customize: !include customize.yaml
+
+config:
+
+frontend:
+      
+sun:
+      
+system_health:
+      
+map:
+      
+history:
+      
+http:
+
+########## ZONES ##########
+zone:
+  - name: Home
+    latitude: !secret home_latitude
+    longitude: !secret home_longitude
+    radius: 450
+    icon: mdi:home
+
+  - name: MxL
+    latitude: !secret work_latitude
+    longitude: !secret work_longitude
+    radius: 450
+    icon: mdi:worker
+
+  - name: Sipcam
+    latitude: !secret sipcam_latitude
+    longitude: !secret sipcam_longitude
+    radius: 450
+    icon: mdi:worker
+
+########## MQTT ##########
+mqtt:
+  broker: mqtt.lanquarden.com
+  port: 1883
+      
+########## HOMEMATIC ##########
+homematic:
+  local_port: 2001
+  interfaces:
+    wireless:
+      host: ccu2.lanquarden.com
+      callback_ip: 192.168.1.20
+      callback_port: 2001
+
+########## INFLUXDB ##########
+influxdb:
+  host: influxdb.monitoring
+  include:
+    entities:
+      - sensor.dark_sky_temperature
+      - sensor.dark_sky_apparent_temperature
+      - sensor.dark_sky_humidity
+      - sensor.dark_sky_absolute
+      - sensor.neq1521913_humidity
+      - sensor.neq1521926_humidity
+      - sensor.neq1521927_humidity
+      - sensor.neq1521928_humidity
+      - sensor.neq1521913_temperature
+      - sensor.neq1521926_temperature
+      - sensor.neq1521927_temperature
+      - sensor.neq1521928_temperature
+      - sensor.neq1521913_absolute
+      - sensor.neq1521926_absolute
+      - sensor.neq1521927_absolute
+      - sensor.neq1521928_absolute
+      - climate.neq1411004
+      - climate.neq1411046
+      - climate.neq1411058
+      - climate.neq1413070
+      - climate.oeq0238208
+      - climate.oeq0238216
+      - climate.oeq0238454
+      - climate.oeq0238467
+      - climate.oeq0238497
+      - climate.oeq0238491
+      - switch.neq0112502
+     
+########## SENSORS ##########
+sensor: !include sensors.yaml
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+########## LOGGING ##########
+logger:
+  default: warning
+  logs:
+      homeassistant.components.homematic: warning
+      # locationsharinglib: debug

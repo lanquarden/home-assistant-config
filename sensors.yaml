@@ -1,0 +1,83 @@
+    - platform: darksky
+      api_key: !secret darksky_key
+      monitored_conditions:
+          - summary
+          #- icon
+          #- nearest_storm_distance
+          #- nearest_storm_bearing
+          - precip_type
+          - precip_intensity
+          - precip_probability
+          - temperature
+          - apparent_temperature
+          - dew_point
+          - wind_speed
+          - wind_bearing
+          - cloud_cover
+          - humidity
+          - pressure
+          #- visibility
+          #- ozone
+
+    - platform: template
+      sensors:
+          neq1521913_absolute:
+              friendly_name: Attic
+              unit_of_measurement: 'g/m3'
+              value_template: >
+                  {% set T=states('sensor.neq1521913_temperature') | float %}
+                  {% set RH=states('sensor.neq1521913_humidity') | float %}
+                  {% set C=2.16679 %}
+                  {% set A=6.116441 %}
+                  {% set m=7.591386 %}
+                  {% set Tn=240.7263 %}
+                  {% set Pws = A * 10 ** ((m * T) / (T + Tn)) %}
+                  {{(C * Pws * RH / (273.15 + T)) | round(2)}}
+          neq1521926_absolute:
+              friendly_name: Living Room
+              unit_of_measurement: 'g/m3'
+              value_template: >
+                  {% set T=states('sensor.neq1521926_temperature') | float %}
+                  {% set RH=states('sensor.neq1521926_humidity') | float %}
+                  {% set C=2.16679 %}
+                  {% set A=6.116441 %}
+                  {% set m=7.591386 %}
+                  {% set Tn=240.7263 %}
+                  {% set Pws = A * 10 ** ((m * T) / (T + Tn)) %}
+                  {{(C * Pws * RH / (273.15 + T)) | round(2)}}
+          neq1521927_absolute:
+              friendly_name: Master Bed Room
+              unit_of_measurement: 'g/m3'
+              value_template: >
+                  {% set T=states('sensor.neq1521927_temperature') | float %}
+                  {% set RH=states('sensor.neq1521927_humidity') | float %}
+                  {% set C=2.16679 %}
+                  {% set A=6.116441 %}
+                  {% set m=7.591386 %}
+                  {% set Tn=240.7263 %}
+                  {% set Pws = A * 10 ** ((m * T) / (T + Tn)) %}
+                  {{(C * Pws * RH / (273.15 + T)) | round(2)}}
+          neq1521928_absolute:
+              friendly_name: Kids Bed Room
+              unit_of_measurement: 'g/m3'
+              value_template: >
+                  {% set T=states('sensor.neq1521928_temperature') | float %}
+                  {% set RH=states('sensor.neq1521928_humidity') | float %}
+                  {% set C=2.16679 %}
+                  {% set A=6.116441 %}
+                  {% set m=7.591386 %}
+                  {% set Tn=240.7263 %}
+                  {% set Pws = A * 10 ** ((m * T) / (T + Tn)) %}
+                  {{(C * Pws * RH / (273.15 + T)) | round(2)}}
+          dark_sky_absolute:
+              friendly_name: Dark Sky
+              unit_of_measurement: 'g/m3'
+              value_template: >
+                  {% set T=states('sensor.dark_sky_temperature') | float %}
+                  {% set RH=states('sensor.dark_sky_humidity') | float %}
+                  {% set C=2.16679 %}
+                  {% set A=6.116441 %}
+                  {% set m=7.591386 %}
+                  {% set Tn=240.7263 %}
+                  {% set Pws = A * 10 ** ((m * T) / (T + Tn)) %}
+                  {{(C * Pws * RH / (273.15 + T)) | round(2)}}
