@@ -1,0 +1,13 @@
+---
+#
+# Communication with Homematic CCU
+#
+# https://www.home-assistant.io/integrations/homematic/
+#
+homematic:
+  local_port: 2001
+  interfaces:
+    wireless:
+      host: ccu2.lanquarden.com
+      callback_ip: 192.168.1.20
+      callback_port: 2001

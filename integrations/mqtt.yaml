@@ -1,0 +1,8 @@
+---
+# MQTT message broker configuration
+#
+# https://www.home-assistant.io/integrations/mqtt
+#
+mqtt:
+  broker: mqtt.lanquarden.com
+  port: 1883

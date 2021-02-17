@@ -1,0 +1,24 @@
+---
+# Zones allow you to specify certain regions on earth (for now).
+#
+# https://www.home-assistant.io/components/zone/
+#
+
+zone:
+  - name: Home
+    latitude: !secret home_latitude
+    longitude: !secret home_longitude
+    radius: 450
+    icon: mdi:home
+
+  - name: MxL
+    latitude: !secret work_latitude
+    longitude: !secret work_longitude
+    radius: 450
+    icon: mdi:worker
+
+  - name: Sipcam
+    latitude: !secret sipcam_latitude
+    longitude: !secret sipcam_longitude
+    radius: 450
+    icon: mdi:worker

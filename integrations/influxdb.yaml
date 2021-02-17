@@ -1,0 +1,37 @@
+---
+#
+# Store sensor history in InfluxDB
+# 
+# https://www.home-assistant.io/integrations/influxdb/
+#
+influxdb:
+  host: influxdb.monitoring
+  include:
+    entities:
+      - sensor.dark_sky_temperature
+      - sensor.dark_sky_apparent_temperature
+      - sensor.dark_sky_humidity
+      - sensor.dark_sky_absolute
+      - sensor.neq1521913_humidity
+      - sensor.neq1521926_humidity
+      - sensor.neq1521927_humidity
+      - sensor.neq1521928_humidity
+      - sensor.neq1521913_temperature
+      - sensor.neq1521926_temperature
+      - sensor.neq1521927_temperature
+      - sensor.neq1521928_temperature
+      - sensor.neq1521913_absolute
+      - sensor.neq1521926_absolute
+      - sensor.neq1521927_absolute
+      - sensor.neq1521928_absolute
+      - climate.neq1411004
+      - climate.neq1411046
+      - climate.neq1411058
+      - climate.neq1413070
+      - climate.oeq0238208
+      - climate.oeq0238216
+      - climate.oeq0238454
+      - climate.oeq0238467
+      - climate.oeq0238497
+      - climate.oeq0238491
+      - switch.neq0112502
