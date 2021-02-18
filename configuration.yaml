@@ -27,30 +27,3 @@ homeassistant:
 
     # customize
     customize: !include customize.yaml
-
-config:
-
-frontend:
-      
-sun:
-      
-system_health:
-      
-history:
-      
-
-# Text to speech
-tts:
-  - platform: google_translate
-
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
-scene: !include scenes.yaml
-
-########## LOGGING ##########
-logger:
-  default: warning
-  logs:
-      homeassistant.components.homematic: warning
-      # locationsharinglib: debug
