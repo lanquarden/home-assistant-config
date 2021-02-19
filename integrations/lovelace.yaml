@@ -1,0 +1,15 @@
+---
+# Lovelace component for confuring the UI.
+#
+# https://www.home-assistant.io/lovelace/
+# https://www.home-assistant.io/lovelace/yaml-mode/
+#
+lovelace:
+  mode: yaml
+  # dashboards:
+  #   dash-overview:
+  #     mode: yaml
+  #     filename: ui-lovelace-overview.yaml
+  #     title: Overview
+  #     show_in_sidebar: true
+  #     require_admin: false
