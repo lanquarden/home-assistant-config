@@ -1,0 +1,20 @@
+---
+# Kids Bed Room virtual thermostat
+platform: mqtt
+name: kids_bed_room
+modes:
+  - "off"
+  - "auto"
+  - "heat"
+max_temp: 30.5
+min_temp: 4.5
+precision: 0.1
+temp_step: 0.5
+action_topic: "kids-bed-room/climate/action/state"
+current_temperature_topic: "kids-bed-room/climate/current_temperature/state"
+temperature_state_topic: "kids-bed-room/climate/temperature/state"
+temperature_command_topic: "kids-bed-room/climate/temperature/set"
+mode_state_topic: "kids-bed-room/climate/mode/state"
+mode_command_topic: "kids-bed-room/climate/mode/set"
+away_mode_state_topic: "kids-bed-room/climate/away/state"
+away_mode_command_topic: "kids-bed-room/climate/away/set"

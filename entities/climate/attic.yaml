@@ -1,0 +1,20 @@
+---
+# Attic virtual thermostat
+platform: mqtt
+name: attic
+modes:
+  - "off"
+  - "auto"
+  - "heat"
+max_temp: 30.5
+min_temp: 4.5
+precision: 0.1
+temp_step: 0.5
+action_topic: "attic/climate/action/state"
+current_temperature_topic: "attic/climate/current_temperature/state"
+temperature_state_topic: "attic/climate/temperature/state"
+temperature_command_topic: "attic/climate/temperature/set"
+mode_state_topic: "attic/climate/mode/state"
+mode_command_topic: "attic/climate/mode/set"
+away_mode_state_topic: "attic/climate/away/state"
+away_mode_command_topic: "attic/climate/away/set"

@@ -64,3 +64,11 @@ views:
         entity: climate.oeq0238208
       - type: weather-forecast
         entity: weather.home
+      - type: thermostat
+        entity: climate.living_room
+      - type: thermostat
+        entity: climate.master_bed_room
+      - type: thermostat
+        entity: climate.kids_bed_room
+      - type: thermostat
+        entity: climate.attic
