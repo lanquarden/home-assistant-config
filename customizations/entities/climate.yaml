@@ -1,0 +1,41 @@
+# Homematic thermostats
+climate.neq1521926:
+    friendly_name: Living Room
+climate.neq1521913:
+    friendly_name: Attic
+climate.neq1521927:
+    friendly_name: Master Bed Room
+climate.neq1521928:
+    friendly_name: Kids Bed Room
+
+# MQTT virtual thermostats
+climate.living_room:
+    friendly_name: Living Room
+climate.attic:
+    friendly_name: Attic
+climate.master_bed_room:
+    friendly_name: Master Bed Room
+climate.kids_bed_room:
+    friendly_name: Kids Bed Room
+
+# Homematic valves
+climate.oeq0238497:
+    friendly_name: Valve Attic
+climate.oeq0238491:
+    friendly_name: Valve Hall
+climate.oeq0238467:
+    friendly_name: Valve Bath Room
+climate.oeq0238208:
+    friendly_name: Valve Guest Bed Room
+climate.oeq0238216:
+    friendly_name: Valve Kids Bed Room
+climate.neq1411046:
+    friendly_name: Valve Kitchen
+climate.neq1411058:
+    friendly_name: Valve Living Room Left
+climate.neq1411004:
+    friendly_name: Valve Living Room Right
+climate.oeq0238454:
+    friendly_name: Valve Master Bath Room
+climate.neq1413070:
+    friendly_name: Valve Master Bed Room

@@ -1,0 +1,17 @@
+# Temperature sensors
+sensor.neq1521913_temperature:
+    friendly_name: Attic
+sensor.neq1521926_temperature:
+    friendly_name: Living Room
+sensor.neq1521927_temperature:
+    friendly_name: Master Bed Room
+sensor.neq1521928_temperature:
+    friendly_name: Kids Bed Room
+sensor.neq1521913_humidity:
+    friendly_name: Attic
+sensor.neq1521926_humidity:
+    friendly_name: Living Room
+sensor.neq1521927_humidity:
+    friendly_name: Master Bed Room
+sensor.neq1521928_humidity:
+    friendly_name: Kids Bed Room

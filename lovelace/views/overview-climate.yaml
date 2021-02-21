@@ -1,0 +1,72 @@
+title: Climate
+path: climate
+badges: []
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: thermostat
+        entity: climate.neq1521926
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            entity: sensor.neq1521926_temperature
+            graph: line
+            detail: 2
+          - type: sensor
+            entity: sensor.neq1521926_humidity
+            graph: line
+            detail: 2
+  - type: horizontal-stack
+    cards:
+      - type: thermostat
+        entity: climate.neq1521927
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            entity: sensor.neq1521927_temperature
+            graph: line
+            detail: 2
+          - type: sensor
+            entity: sensor.neq1521927_humidity
+            graph: line
+            detail: 2
+  - type: horizontal-stack
+    cards:
+      - type: thermostat
+        entity: climate.neq1521928
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            entity: sensor.neq1521928_temperature
+            graph: line
+            detail: 2
+          - type: sensor
+            entity: sensor.neq1521928_humidity
+            graph: line
+            detail: 2
+  - type: horizontal-stack
+    cards:
+      - type: thermostat
+        entity: climate.neq1521913
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            entity: sensor.neq1521913_temperature
+            graph: line
+            detail: 2
+          - type: sensor
+            entity: sensor.neq1521913_humidity
+            graph: line
+            detail: 2
+  - type: thermostat
+    entity: climate.oeq0238208
+  - type: weather-forecast
+    entity: weather.home
+  - type: thermostat
+    entity: climate.living_room
+  - type: thermostat
+    entity: climate.master_bed_room
+  - type: thermostat
+    entity: climate.kids_bed_room
+  - type: thermostat
+    entity: climate.attic

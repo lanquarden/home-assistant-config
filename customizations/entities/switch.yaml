@@ -1,0 +1,3 @@
+# Homematic switch
+switch.neq0112502:
+    friendly_name: Boiler switch

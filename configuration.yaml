@@ -24,6 +24,3 @@ homeassistant:
     # integration definition in separate folder
     # https://www.home-assistant.io/docs/configuration/packages/
     packages: !include_dir_named integrations
-
-    # customize
-    customize: !include customize.yaml
