@@ -6,6 +6,7 @@
 #
 lovelace:
   mode: yaml
+  resources: !include ../lovelace/resources.yaml
   # dashboards:
   #   dash-overview:
   #     mode: yaml

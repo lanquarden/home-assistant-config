@@ -1,3 +1,7 @@
-title: Home
+background: var(--background-image)
+button_card_templates: !include ../button_card_templates.yaml
+
 views:
+  - !include ../views/overview-home.yaml
+  - !include ../views/overview-kids.yaml
   - !include ../views/overview-climate.yaml

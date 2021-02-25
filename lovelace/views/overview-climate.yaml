@@ -2,71 +2,114 @@ title: Climate
 path: climate
 badges: []
 cards:
-  - type: horizontal-stack
+  - type: custom:stack-in-card
+    mode: horizontal
+    keep: 
+      background: true
     cards:
       - type: thermostat
-        entity: climate.neq1521926
+        entity: climate.living_room
       - type: vertical-stack
         cards:
-          - type: sensor
-            entity: sensor.neq1521926_temperature
-            graph: line
-            detail: 2
-          - type: sensor
-            entity: sensor.neq1521926_humidity
-            graph: line
-            detail: 2
-  - type: horizontal-stack
+          - type: custom:mini-graph-card
+            show:
+              name: false
+              icon: false
+            points_per_hour: 2
+            align_state: right
+            entities:
+              - sensor.neq1521926_temperature
+            line_color: var(--accent-color)
+          - type: custom:mini-graph-card
+            show:
+              name: false
+              icon: false
+            points_per_hour: 2
+            align_state: right
+            entities:
+              - sensor.neq1521926_humidity
+            line_color: blue
+
+  - type: custom:stack-in-card
+    mode: horizontal
+    keep: 
+      background: true
     cards:
       - type: thermostat
-        entity: climate.neq1521927
+        entity: climate.master_bed_room
       - type: vertical-stack
         cards:
-          - type: sensor
-            entity: sensor.neq1521927_temperature
-            graph: line
-            detail: 2
-          - type: sensor
-            entity: sensor.neq1521927_humidity
-            graph: line
-            detail: 2
-  - type: horizontal-stack
+          - type: custom:mini-graph-card
+            show:
+              name: false
+              icon: false
+            points_per_hour: 2
+            align_state: right
+            entities:
+              - sensor.neq1521927_temperature
+            line_color: var(--accent-color)
+          - type: custom:mini-graph-card
+            show:
+              name: false
+              icon: false
+            points_per_hour: 2
+            align_state: right
+            entities:
+              - sensor.neq1521927_humidity
+            line_color: blue
+
+  - type: custom:stack-in-card
+    mode: horizontal
+    keep: 
+      background: true
     cards:
       - type: thermostat
-        entity: climate.neq1521928
+        entity: climate.kids_bed_room
       - type: vertical-stack
         cards:
-          - type: sensor
-            entity: sensor.neq1521928_temperature
-            graph: line
-            detail: 2
-          - type: sensor
-            entity: sensor.neq1521928_humidity
-            graph: line
-            detail: 2
-  - type: horizontal-stack
+          - type: custom:mini-graph-card
+            show:
+              name: false
+              icon: false
+            points_per_hour: 2
+            align_state: right
+            entities:
+              - sensor.neq1521928_temperature
+            line_color: var(--accent-color)
+          - type: custom:mini-graph-card
+            show:
+              name: false
+              icon: false
+            points_per_hour: 2
+            align_state: right
+            entities:
+              - sensor.neq1521928_humidity
+            line_color: blue
+
+  - type: custom:stack-in-card
+    mode: horizontal
+    keep: 
+      background: true
     cards:
       - type: thermostat
-        entity: climate.neq1521913
+        entity: climate.attic
       - type: vertical-stack
         cards:
-          - type: sensor
-            entity: sensor.neq1521913_temperature
-            graph: line
-            detail: 2
-          - type: sensor
-            entity: sensor.neq1521913_humidity
-            graph: line
-            detail: 2
-  - type: thermostat
-    entity: climate.oeq0238208
-  - type: weather-forecast
-    entity: weather.home
-  - type: thermostat
-    entity: climate.living_room
-  - type: thermostat
-    entity: climate.master_bed_room
-  - type: thermostat
-    entity: climate.kids_bed_room
-  - type: thermostat
-    entity: climate.attic
+          - type: custom:mini-graph-card
+            show:
+              name: false
+              icon: false
+            points_per_hour: 2
+            align_state: right
+            entities:
+              - sensor.neq1521913_temperature
+            line_color: var(--accent-color)
+          - type: custom:mini-graph-card
+            show:
+              name: false
+              icon: false
+            points_per_hour: 2
+            align_state: right
+            entities:
+              - sensor.neq1521913_humidity
+            line_color: blue
