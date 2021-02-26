@@ -60,6 +60,14 @@ switch_button:
         state: null
       value: 'on'
 
+disabled_button:
+  tap_action:
+    action: none
+  hold_action:
+    action: none
+  double_tap_action:
+    action: none
+
 robux_button:
   template: default_button
   show_icon: false
@@ -83,6 +91,11 @@ robux_button:
         </g>
       </svg>
   styles:
+    card:
+      - background-image: >
+          [[[
+            return `linear-gradient(0deg, var(--label-badge-green), var(--label-badge-green) ${entity.state / 400.0 * 100}%, var(--card-background-color) 0)`
+          ]]]
     grid:
       - grid-template-areas: '"robux" "n" "s" "l"'
     state:

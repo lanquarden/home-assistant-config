@@ -4,3 +4,4 @@
 # https://www.home-assistant.io/docs/automation/
 #
 automation: []
+automation split: !include_dir_list ../automations

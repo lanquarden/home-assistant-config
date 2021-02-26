@@ -1,5 +1,6 @@
 title: Home
 path: home
+icon: mdi:home
 badges: []
 panel: true
 cards:

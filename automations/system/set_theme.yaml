@@ -1,0 +1,12 @@
+---
+id: system_set_theme
+alias: System - Set theme
+max_exceeded: silent
+trigger:
+  platform: homeassistant
+  event: start
+action:
+  - service: frontend.set_theme
+    data:
+      name: Google Light Theme
+      mode: light

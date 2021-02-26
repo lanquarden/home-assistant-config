@@ -1,5 +1,6 @@
 title: Climate
 path: climate
+icon: mdi:home-thermometer
 badges: []
 cards:
   - type: custom:stack-in-card
