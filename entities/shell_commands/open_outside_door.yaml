@@ -1,0 +1,2 @@
+---
+open_outside_door: !secret open_outside_door_command

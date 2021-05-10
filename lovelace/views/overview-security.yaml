@@ -1,0 +1,43 @@
+title: Security
+icon: 'mdi:lock'
+id: security
+path: security
+badges: []
+type: custom:grid-layout
+layout:
+  grid-template-columns: 25% 25% 25% 25%
+  grid-template-rows: auto
+  grid-template-areas: |
+    "office office . ."
+  mediaquery:
+    "(max-width: 600px)":
+      grid-template-columns: 100%
+      grid-template-areas: |
+        "office"
+    "(max-width: 900px)": 
+      grid-template-columns: 50% 50%
+      grid-template-areas: |
+        "office office"
+    "(max-width: 1600px)": 
+      grid-template-columns: 33% 33% 33%
+      grid-template-areas: |
+        "office . ."
+cards:
+  - type: vertical-stack
+    view_layout:
+      grid-area: office
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Office
+      - type: picture-entity
+        camera_view: live
+        entity: camera.office
+        show_name: true
+      - type: 'custom:button-card'
+        template: header
+        name: Test
+      - type: 'glance'
+        entities:
+          - entity: camera.office_person
+            name: Last person
