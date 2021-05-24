@@ -1,0 +1,11 @@
+---
+id: system_homematic_reconnect
+alias: System - Homematic Reconnect
+max_exceeded: silent
+trigger:
+  platform: homeassistant
+  event: start
+action:
+  - delay:
+      seconds: 60
+  - service: homematic.reconnect
