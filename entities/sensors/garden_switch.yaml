@@ -1,0 +1,9 @@
+platform: mqtt
+name: "Garden Switch Wi-Fi Quality"
+state_topic: "garden/switch/tele/STATE"
+unit_of_measurement: "%"
+value_template: "{{value_json['Wifi'].RSSI }}"
+availability_topic: "garden/switch/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+device_class: signal_strength

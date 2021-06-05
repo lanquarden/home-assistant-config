@@ -1,0 +1,11 @@
+platform: mqtt
+name: "Pool Switch"
+state_topic: "garden/switch/stat/POWER2"
+command_topic: "garden/switch/cmnd/POWER2"
+payload_on: "ON"
+payload_off: "OFF"
+availability_topic: "garden/switch/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false
