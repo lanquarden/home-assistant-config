@@ -1,0 +1,156 @@
+title: Shutters
+path: shutters
+icon: mdi:window-shutter
+badges: []
+visible:
+  - user: !secret uid_pepijn
+  - user: !secret uid_lorena
+type: custom:grid-layout
+layout:
+  grid-template-columns: 25% 25% 25% 25%
+  grid-template-rows: auto
+  grid-template-areas: |
+    "living-room kitchen master-bed-room ."
+  mediaquery:
+    "(max-width: 600px)":
+      grid-template-columns: 100%
+      grid-template-areas: |
+        "living-room"
+        "kitchen"
+        "master-bed-room"
+    "(max-width: 900px)": 
+      grid-template-columns: 50% 50%
+      grid-template-areas: |
+        "living-room kitchen"
+        "master-bed-room ."
+    "(max-width: 1600px)": 
+      grid-template-columns: 33% 33% 33%
+      grid-template-areas: |
+        "living-room kitchen master-bed-room"
+cards:
+  - type: vertical-stack
+    view_layout:
+      grid-area: living-room
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Living Room
+      - type: grid
+        colums: 3
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: North
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.sd_north_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.sd_north_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: East
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.sd_east_north_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.sd_east_north_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button       
+  - type: vertical-stack
+    view_layout:
+      grid-area: kitchen
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Kitchen
+      - type: grid
+        colums: 3
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: East
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.sd_east_south_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.sd_east_south_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button
+  - type: vertical-stack
+    view_layout:
+      grid-area: master-bed-room
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Master Bed Room
+      - type: grid
+        colums: 3
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: North
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.su_west_north_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.su_west_north_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: West
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.su_west_west_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.su_west_west_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button                
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: South
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.su_west_south_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.su_west_south_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button                

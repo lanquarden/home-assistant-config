@@ -1,0 +1,11 @@
+platform: mqtt
+name: su_west_west_down
+state_topic: "master-bed-room/shutter/su-west-west/stat/POWER2"
+command_topic: "master-bed-room/shutter/su-west-west/cmnd/POWER2"
+payload_on: "ON"
+payload_off: "OFF"
+availability_topic: "master-bed-room/shutter/su-west-west/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false

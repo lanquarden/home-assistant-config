@@ -1,0 +1,11 @@
+platform: mqtt
+name: sd_east_south_up
+state_topic: "kitchen/shutter/sd-east-south/stat/POWER1"
+command_topic: "kitchen/shutter/sd-east-south/cmnd/POWER1"
+payload_on: "ON"
+payload_off: "OFF"
+availability_topic: "kitchen/shutter/sd-east-south/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false

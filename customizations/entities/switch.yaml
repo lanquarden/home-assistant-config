@@ -1,3 +1,40 @@
 # Homematic switch
 switch.neq0112502:
     friendly_name: Boiler switch
+
+# Shutters
+switch.sd_east_north_down:
+    friendly_name: "Living room east shutter down"
+
+switch.sd_east_north_up:
+    friendly_name: "Living room east shutter up"
+
+switch.sd_north_down:
+    friendly_name: "Living room north shutter down"
+
+switch.sd_north_up:
+    friendly_name: "Living room north shutter up"
+
+switch.sd_east_south_down:
+    friendly_name: "Kitchen shutter down"
+
+switch.sd_east_south_up:
+    friendly_name: "Kitchen shutter up"
+
+switch.su_west_north_down:
+    friendly_name: "Master bed room north shutter down"
+
+switch.su_west_north_up:
+    friendly_name: "Master bed room north shutter up"
+
+switch.su_west_west_down:
+    friendly_name: "Master bed room west shutter down"
+
+switch.su_west_west_up:
+    friendly_name: "Master bed room west shutter up"
+
+switch.su_west_south_down:
+    friendly_name: "Master bed room south shutter down"
+
+switch.su_west_south_up:
+    friendly_name: "Master bed room south shutter up"

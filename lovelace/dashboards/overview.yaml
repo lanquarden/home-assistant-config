@@ -5,4 +5,5 @@ views:
   - !include ../views/overview-home.yaml
   - !include ../views/overview-kids.yaml
   - !include ../views/overview-climate.yaml
+  - !include ../views/overview-shutters.yaml
   - !include ../views/overview-security.yaml

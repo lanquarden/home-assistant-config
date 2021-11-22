@@ -7,6 +7,7 @@
 *.db-shm
 *.db-wal
 *.pyc
+*.log.*
 ._*
 __pycache__
 
