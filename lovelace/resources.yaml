@@ -9,3 +9,6 @@
 
 - url: /hacsfiles/stack-in-card/stack-in-card.js
   type: module
+
+- url: /hacsfiles/slider-button-card/slider-button-card.js
+  type: module
