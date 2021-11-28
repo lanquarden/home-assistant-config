@@ -1,0 +1,11 @@
+platform: mqtt
+name: sa_north_up
+state_topic: "attic/shutter/sa-north/stat/POWER2"
+command_topic: "attic/shutter/sa-north/cmnd/POWER2"
+payload_on: "ON"
+payload_off: "OFF"
+availability_topic: "attic/shutter/sa-north/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false

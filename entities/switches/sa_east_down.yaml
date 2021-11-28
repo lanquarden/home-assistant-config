@@ -1,0 +1,11 @@
+platform: mqtt
+name: sa_east_down
+state_topic: "attic/shutter/sa-east/stat/POWER1"
+command_topic: "attic/shutter/sa-east/cmnd/POWER1"
+payload_on: "ON"
+payload_off: "OFF"
+availability_topic: "attic/shutter/sa-east/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false

@@ -1,0 +1,11 @@
+platform: mqtt
+name: sd_west_west_down
+state_topic: "living-room/shutter/sd-west-west/stat/POWER2"
+command_topic: "living-room/shutter/sd-west-west/cmnd/POWER2"
+payload_on: "ON"
+payload_off: "OFF"
+availability_topic: "living-room/shutter/sd-west-west/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false

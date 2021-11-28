@@ -10,7 +10,7 @@ layout:
   grid-template-columns: 25% 25% 25% 25%
   grid-template-rows: auto
   grid-template-areas: |
-    "living-room kitchen master-bed-room ."
+    "living-room kitchen master-bed-room attic"
   mediaquery:
     "(max-width: 600px)":
       grid-template-columns: 100%
@@ -18,15 +18,17 @@ layout:
         "living-room"
         "kitchen"
         "master-bed-room"
+        "attic"
     "(max-width: 900px)": 
       grid-template-columns: 50% 50%
       grid-template-areas: |
         "living-room kitchen"
-        "master-bed-room ."
+        "master-bed-room attic"
     "(max-width: 1600px)": 
       grid-template-columns: 33% 33% 33%
       grid-template-areas: |
         "living-room kitchen master-bed-room"
+        "attic . ."
 cards:
   - type: vertical-stack
     view_layout:
@@ -38,6 +40,54 @@ cards:
       - type: grid
         colums: 3
         cards:
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: West-North
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.sd_west_north_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.sd_west_north_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: West-West
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.sd_west_west_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.sd_west_west_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button                
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: West-South
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.sd_west_south_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.sd_west_south_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button
           - type: vertical-stack
             cards:
               - type: 'custom:button-card'
@@ -69,7 +119,7 @@ cards:
                   - type: 'custom:button-card'
                     entity: switch.sd_east_north_down
                     icon: mdi:arrow-down-drop-circle-outline
-                    template: switch_button       
+                    template: switch_button                                     
   - type: vertical-stack
     view_layout:
       grid-area: kitchen
@@ -152,5 +202,47 @@ cards:
                     template: switch_button
                   - type: 'custom:button-card'
                     entity: switch.su_west_south_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button                
+  - type: vertical-stack
+    view_layout:
+      grid-area: attic
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Attic
+      - type: grid
+        colums: 3
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: North
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.sa_north_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.sa_north_down
+                    icon: mdi:arrow-down-drop-circle-outline
+                    template: switch_button
+          - type: vertical-stack
+            cards:
+              - type: 'custom:button-card'
+                template: header
+                name: East
+              - type: grid
+                columns: 2
+                cards:
+                  - type: 'custom:button-card'
+                    entity: switch.sa_east_up
+                    icon: mdi:arrow-up-drop-circle-outline
+                    template: switch_button
+                  - type: 'custom:button-card'
+                    entity: switch.sa_east_down
                     icon: mdi:arrow-down-drop-circle-outline
                     template: switch_button                
