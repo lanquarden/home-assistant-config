@@ -2,9 +2,6 @@ title: Shutters
 path: shutters
 icon: mdi:window-shutter
 badges: []
-visible:
-  - user: !secret uid_pepijn
-  - user: !secret uid_lorena
 type: custom:grid-layout
 layout:
   grid-template-columns: 25% 25% 25% 25%

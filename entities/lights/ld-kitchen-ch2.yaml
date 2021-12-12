@@ -1,29 +1,29 @@
 platform: mqtt
 schema: template
-name: ld-kitchen-ch1
+name: ld-kitchen-ch2
 command_topic: "kitchen/light/ld-kitchen/cmnd/Backlog"
 command_on_template: >-
   {% if state is defined %}
-  Power1 1;
+  Power2 1;
   {%- endif -%} 
   {% if brightness is defined %}
-  Channel1 {{ (brightness / 2.55) | int }}
+  Channel2 {{ (brightness / 2.55) | int }}
   {% else %}
-  Channel1
+  Channel2
   {%- endif -%}
-command_off_template: "Power1 0"
+command_off_template: "Power2 0"
 state_topic: "kitchen/light/ld-kitchen/stat/RESULT"
 state_template: >-
-  {% if value_json.POWER1 is defined %}
-    {{ value_json.POWER1 | lower }}
+  {% if value_json.POWER2 is defined %}
+    {{ value_json.POWER2 | lower }}
   {% else %}
-    {{ states('light.ld_kitchen_ch1') }}
+    {{ states('light.ld_kitchen_ch2') }}
   {%- endif -%}
 brightness_template: >-
-  {% if value_json.Channel1 is defined %}
-    {{  (value_json.Channel1 * 2.55) | int }}
+  {% if value_json.Channel2 is defined %}
+    {{  (value_json.Channel2 * 2.55) | int }}
   {% else %}
-    {% set brightness=state_attr('light.ld_kitchen_ch1', 'brightness') %}
+    {% set brightness=state_attr('light.ld_kitchen_ch2', 'brightness') %}
     {{ brightness if brightness != None else 0 }}
   {%- endif -%}
 availability_topic: "kitchen/light/ld-kitchen/tele/LWT"

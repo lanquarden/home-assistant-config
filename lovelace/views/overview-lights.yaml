@@ -2,32 +2,29 @@ title: Lights
 path: lights
 icon: mdi:ceiling-light
 badges: []
-visible:
-  - user: !secret uid_pepijn
-  - user: !secret uid_lorena
 type: custom:grid-layout
 layout:
   grid-template-columns: 25% 25% 25% 25%
   grid-template-rows: auto
   grid-template-areas: |
-    "hall living master-bed-room kids-bed-room"
+    "hall kitchen master-bed-room kids-bed-room"
   mediaquery:
     "(max-width: 600px)":
       grid-template-columns: 100%
       grid-template-areas: |
         "hall"
-        "living"
+        "kitchen"
         "master-bed-room"
         "kids-bed-room"
     "(max-width: 900px)": 
       grid-template-columns: 50% 50%
       grid-template-areas: |
-        "hall living "
+        "hall kitchen"
         "kids-bed-room attic"
     "(max-width: 1600px)": 
       grid-template-columns: 33% 33% 33%
       grid-template-areas: |
-        "hall living master-bed-room"
+        "hall kitchen master-bed-room"
         "attic . ."
 cards:
   - type: vertical-stack
@@ -53,6 +50,37 @@ cards:
       - type: custom:slider-button-card
         entity: light.ld_hall_ch2
         name: Hall cold
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+  - type: vertical-stack
+    view_layout:
+      grid-area: kitchen
+    keep: 
+      background: true
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Kitchen
+      - type: custom:slider-button-card
+        entity: light.ld_kitchen_ch1
+        name: Kitchen warm
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+      - type: custom:slider-button-card
+        entity: light.ld_kitchen_ch2
+        name: Kitchen cold
         slider:
           direction: left-right
           background: gradient

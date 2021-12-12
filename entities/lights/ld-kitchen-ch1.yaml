@@ -1,7 +1,7 @@
 platform: mqtt
 schema: template
-name: ld-kitchen-ch1
-command_topic: "kitchen/light/ld-kitchen/cmnd/Backlog"
+name: ld-hall-ch1
+command_topic: "hall/light/ld-hall/cmnd/Backlog"
 command_on_template: >-
   {% if state is defined %}
   Power1 1;
@@ -12,24 +12,24 @@ command_on_template: >-
   Channel1
   {%- endif -%}
 command_off_template: "Power1 0"
-state_topic: "kitchen/light/ld-kitchen/stat/RESULT"
+state_topic: "hall/light/ld-hall/stat/RESULT"
 state_template: >-
   {% if value_json.POWER1 is defined %}
     {{ value_json.POWER1 | lower }}
   {% else %}
-    {{ states('light.ld_kitchen_ch1') }}
+    {{ states('light.ld_hall_ch1') }}
   {%- endif -%}
 brightness_template: >-
   {% if value_json.Channel1 is defined %}
     {{  (value_json.Channel1 * 2.55) | int }}
   {% else %}
-    {% set brightness=state_attr('light.ld_kitchen_ch1', 'brightness') %}
+    {% set brightness=state_attr('light.ld_hall_ch1', 'brightness') %}
     {{ brightness if brightness != None else 0 }}
   {%- endif -%}
-availability_topic: "kitchen/light/ld-kitchen/tele/LWT"
+availability_topic: "hall/light/ld-hall/tele/LWT"
 payload_available: "Online"
 payload_not_available: "Offline"
-json_attributes_topic: "kitchen/light/ld-kitchen/tele/STATE"
+json_attributes_topic: "hall/light/ld-hall/tele/STATE"
 json_attributes_template: '{{ value_json.Wifi | tojson }}'
 qos: 1
 retain: false
