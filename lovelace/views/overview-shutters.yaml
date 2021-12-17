@@ -44,7 +44,7 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: false
+              invert: true
             icon:
               show: false
             action_button:
@@ -59,7 +59,7 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: false
+              invert: true
             icon:
               show: false
             action_button:
@@ -75,7 +75,7 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: false
+              invert: true
             icon:
               show: false
             action_button:
@@ -83,22 +83,22 @@ cards:
                 action: toggle
               mode: custom
               icon: mdi:swap-vertical
-          - type: vertical-stack
-            cards:
-              - type: 'custom:button-card'
-                template: header
-                name: North
-              - type: grid
-                columns: 2
-                cards:
-                  - type: 'custom:button-card'
-                    entity: switch.sd_north_up
-                    icon: mdi:arrow-up-drop-circle-outline
-                    template: switch_button
-                  - type: 'custom:button-card'
-                    entity: switch.sd_north_down
-                    icon: mdi:arrow-down-drop-circle-outline
-                    template: switch_button
+          - type: custom:slider-button-card
+            template: cover_button
+            entity: cover.sd_north
+            name: North
+            show_state: false
+            slider:
+              direction: top-bottom
+              background: striped
+              invert: true
+            icon:
+              show: false
+            action_button:
+              tap_action:
+                action: toggle
+              mode: custom
+              icon: mdi:swap-vertical
           - type: vertical-stack
             cards:
               - type: 'custom:button-card'
