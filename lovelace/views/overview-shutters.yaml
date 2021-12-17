@@ -37,54 +37,52 @@ cards:
       - type: grid
         colums: 3
         cards:
-          - type: vertical-stack
-            cards:
-              - type: 'custom:button-card'
-                template: header
-                name: West-North
-              - type: grid
-                columns: 2
-                cards:
-                  - type: 'custom:button-card'
-                    entity: switch.sd_west_north_up
-                    icon: mdi:arrow-up-drop-circle-outline
-                    template: switch_button
-                  - type: 'custom:button-card'
-                    entity: switch.sd_west_north_down
-                    icon: mdi:arrow-down-drop-circle-outline
-                    template: switch_button
-          - type: vertical-stack
-            cards:
-              - type: 'custom:button-card'
-                template: header
-                name: West-West
-              - type: grid
-                columns: 2
-                cards:
-                  - type: 'custom:button-card'
-                    entity: switch.sd_west_west_up
-                    icon: mdi:arrow-up-drop-circle-outline
-                    template: switch_button
-                  - type: 'custom:button-card'
-                    entity: switch.sd_west_west_down
-                    icon: mdi:arrow-down-drop-circle-outline
-                    template: switch_button                
-          - type: vertical-stack
-            cards:
-              - type: 'custom:button-card'
-                template: header
-                name: West-South
-              - type: grid
-                columns: 2
-                cards:
-                  - type: 'custom:button-card'
-                    entity: switch.sd_west_south_up
-                    icon: mdi:arrow-up-drop-circle-outline
-                    template: switch_button
-                  - type: 'custom:button-card'
-                    entity: switch.sd_west_south_down
-                    icon: mdi:arrow-down-drop-circle-outline
-                    template: switch_button
+          - type: custom:slider-button-card
+            entity: cover.sd_west_south
+            name: West-South
+            show_state: false
+            slider:
+              direction: top-bottom
+              background: striped
+              invert: false
+            icon:
+              show: false
+            action_button:
+              tap_action:
+                action: toggle
+              mode: custom
+              icon: mdi:swap-vertical
+          - type: custom:slider-button-card
+            entity: cover.sd_west_west
+            name: West-West
+            show_state: false
+            slider:
+              direction: top-bottom
+              background: striped
+              invert: false
+            icon:
+              show: false
+            action_button:
+              tap_action:
+                action: toggle
+              mode: custom
+              icon: mdi:swap-vertical
+          - type: custom:slider-button-card
+            template: cover_button
+            entity: cover.sd_west_north
+            name: West-North
+            show_state: false
+            slider:
+              direction: top-bottom
+              background: striped
+              invert: false
+            icon:
+              show: false
+            action_button:
+              tap_action:
+                action: toggle
+              mode: custom
+              icon: mdi:swap-vertical
           - type: vertical-stack
             cards:
               - type: 'custom:button-card'

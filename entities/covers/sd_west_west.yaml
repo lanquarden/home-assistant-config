@@ -1,0 +1,45 @@
+platform: mqtt
+name: sd_west_west
+device_class: shutter
+command_topic: "living-room/shutter/sd-west-west/cmnd/Backlog"
+payload_open: "ShutterOpen1"
+payload_close: "ShutterClose1"
+payload_stop: "ShutterStop1"
+state_topic: "living-room/shutter/sd-west-west/stat/RESULT"
+state_open: "open"
+state_closing: "closing"
+state_opening: "opening"
+state_closed: "closed"
+value_template: >-
+    {% if value_json.Shutter1 is defined and value_json.Shutter1.Position is defined and value_json.Shutter1.Direction is defined %}
+    {% set position = value_json.Shutter1.Position %}
+    {% set direction = value_json.Shutter1.Direction %}
+        {% if direction == -1 %}
+    closing
+        {% elif direction == 1 %}
+    opening
+        {% elif direction == 0 and position == 100 %}
+    open
+        {% elif direction == 0 and position == 0 %}
+    closed
+        {% else %}
+    invalid
+        {% endif %}
+    {% else %}
+    {{ states('cover.sd_west_west') }}
+    {% endif %}
+position_open: 0
+position_closed: 100
+position_topic: "living-room/shutter/sd-west-west/stat/RESULT"
+position_template: >-
+    {% if value_json.Shutter1 is defined and value_json.Shutter1.Position is defined %}
+    {{ value_json.Shutter1.Position }}
+    {% else %}  
+    {{ state_attr('cover.sd_west_west','current_position') | int }}
+    {% endif %}  
+set_position_topic: "living-room/shutter/sd-west-west/cmnd/Backlog"
+set_position_template: 'ShutterPosition1 {{ position }}'
+availability_topic: "living-room/shutter/sd-west-west/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+retain: false

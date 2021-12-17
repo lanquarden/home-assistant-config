@@ -60,6 +60,22 @@ switch_button:
         state: null
       value: 'on'
 
+# can't be used as a template yet in slider-button-card
+cover_button:
+  slider:
+    direction: top-bottom
+    background: striped
+    invert: true
+  icon:
+    show: false
+    tap_action:
+      action: more-info
+  action_button:
+    tap_action:
+      action: toggle
+    mode: custom
+    icon: mdi:swap-vertical
+
 disabled_button:
   tap_action:
     action: none
