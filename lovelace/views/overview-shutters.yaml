@@ -44,7 +44,7 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: true
+              invert: false
             icon:
               show: false
             action_button:
@@ -59,7 +59,7 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: true
+              invert: false
             icon:
               show: false
             action_button:
@@ -75,7 +75,7 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: true
+              invert: false
             icon:
               show: false
             action_button:
@@ -91,7 +91,7 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: true
+              invert: false
             icon:
               show: false
             action_button:

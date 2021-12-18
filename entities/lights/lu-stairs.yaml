@@ -1,0 +1,20 @@
+platform: mqtt
+schema: template
+name: lu_stairs
+command_topic: "hall/light/lu-stairs/cmnd/Backlog"
+command_on_template: "Power 1"
+command_off_template: "Power 0"
+state_topic: "hall/light/lu-stairs/stat/RESULT"
+state_template: >-
+  {% if value_json.POWER is defined %}
+    {{ value_json.POWER | lower }}
+  {% else %}
+    {{ states('light.lu_stairs') }}
+  {%- endif -%}
+availability_topic: "hall/light/lu-stairs/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+json_attributes_topic: "hall/light/lu-stairs/tele/STATE"
+json_attributes_template: '{{ value_json.Wifi | tojson }}'
+qos: 1
+retain: false

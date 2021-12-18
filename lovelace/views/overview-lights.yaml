@@ -58,6 +58,21 @@ cards:
             action: more-info
         action_button:
           mode: toggle
+      - type: grid
+        colums: 3
+        cards:
+          - type: custom:button-card
+            template: switch_button
+            entity: light.ld_stairs
+            icon: mdi:stairs-down
+          - type: custom:button-card
+            template: switch_button
+            entity: light.lu_hall
+            icon: mdi:lightbulb 
+          - type: custom:button-card
+            template: switch_button
+            entity: light.lu_stairs
+            icon: mdi:stairs-up
   - type: vertical-stack
     view_layout:
       grid-area: kitchen
