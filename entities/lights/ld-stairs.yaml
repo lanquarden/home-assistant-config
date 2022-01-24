@@ -15,6 +15,6 @@ availability_topic: "hall/light/ld-stairs/tele/LWT"
 payload_available: "Online"
 payload_not_available: "Offline"
 json_attributes_topic: "hall/light/ld-stairs/tele/STATE"
-json_attributes_template: '{{ valde_json.Wifi | tojson }}'
+json_attributes_template: '{{ value_json.Wifi | tojson }}'
 qos: 1
 retain: false

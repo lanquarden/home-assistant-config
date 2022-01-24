@@ -12,34 +12,43 @@ state_opening: "opening"
 state_closed: "closed"
 value_template: >-
     {% if value_json.Shutter1 is defined and value_json.Shutter1.Position is defined and value_json.Shutter1.Direction is defined %}
-    {% set position = value_json.Shutter1.Position %}
-    {% set direction = value_json.Shutter1.Direction %}
+        {% set position = value_json.Shutter1.Position %}
+        {% set direction = value_json.Shutter1.Direction %}
         {% if direction == -1 %}
-    closing
+            closing
         {% elif direction == 1 %}
-    opening
-        {% elif direction == 0 and position == 100 %}
-    open
+            opening
+        {% elif direction == 0 and position > 0 %}
+            open
         {% elif direction == 0 and position == 0 %}
-    closed
+            closed
+        {% endif %}
+    {% elif value_json.ShutterPosition1 is defined %}
+        {% set position = value_json.ShutterPosition1 %}
+        {% if position > 0 %}
+            open
         {% else %}
-    invalid
+            closed
         {% endif %}
     {% else %}
     {{ states('cover.sd_west_north') }}
     {% endif %}
-position_open: 0
-position_closed: 100
+position_open: 100
+position_closed: 0
 position_topic: "living-room/shutter/sd-west-north/stat/RESULT"
 position_template: >-
     {% if value_json.Shutter1 is defined and value_json.Shutter1.Position is defined %}
-    {{ value_json.Shutter1.Position }}
-    {% else %}  
-    {{ state_attr('cover.sd_west_north','current_position') | int }}
+        {{ value_json.Shutter1.Position }}
+    {% elif value_json.ShutterPosition1 is defined %}  
+        {{ value_json.ShutterPosition1 }}
+    {% else %}
+        {{ state_attr('cover.sd_west_north','current_position') | int }}
     {% endif %}  
 set_position_topic: "living-room/shutter/sd-west-north/cmnd/Backlog"
 set_position_template: 'ShutterPosition1 {{ position }}'
 availability_topic: "living-room/shutter/sd-west-north/tele/LWT"
 payload_available: "Online"
 payload_not_available: "Offline"
+json_attributes_topic: "living-room/shutter/sd-west-north/tele/STATE"
+json_attributes_template: '{{ value_json.Wifi | tojson }}'
 retain: false

@@ -44,9 +44,16 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: false
+              invert: true
             icon:
-              show: false
+              show: true
+              tap_action:
+                action: call-service
+                service: cover.stop_cover
+                service_data:
+                  entity_id: cover.sd_west_south
+              custom:
+              icon: mdi:stop
             action_button:
               tap_action:
                 action: toggle
@@ -59,9 +66,16 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: false
+              invert: true
             icon:
-              show: false
+              show: true
+              tap_action:
+                action: call-service
+                service: cover.stop_cover
+                service_data:
+                  entity_id: cover.sd_west_west
+              custom:
+              icon: mdi:stop
             action_button:
               tap_action:
                 action: toggle
@@ -75,9 +89,16 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: false
+              invert: true
             icon:
-              show: false
+              show: true
+              tap_action:
+                action: call-service
+                service: cover.stop_cover
+                service_data:
+                  entity_id: cover.sd_west_north
+              custom:
+              icon: mdi:stop
             action_button:
               tap_action:
                 action: toggle
@@ -91,9 +112,16 @@ cards:
             slider:
               direction: top-bottom
               background: striped
-              invert: false
+              invert: true
             icon:
-              show: false
+              show: true
+              tap_action:
+                action: call-service
+                service: cover.stop_cover
+                service_data:
+                  entity_id: cover.sd_north
+              custom:
+              icon: mdi:stop
             action_button:
               tap_action:
                 action: toggle

@@ -1,0 +1,18 @@
+---
+id: system_mqtt_refresh
+alias: System - MQTT Refresh
+max_exceeded: silent
+trigger:
+  - platform: homeassistant
+    event: start
+  - platform: event
+    event_type: event_mqtt_reloaded
+action:
+  - service: mqtt.publish
+    data:
+      topic: "lights/cmnd/Backlog"
+      payload: "State"
+  - service: mqtt.publish
+    data:
+      topic: "shutters/cmnd/Backlog"
+      payload: "ShutterPosition1"

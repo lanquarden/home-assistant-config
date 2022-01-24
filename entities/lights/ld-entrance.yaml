@@ -1,20 +1,20 @@
 platform: mqtt
 schema: template
-name: lu_hall
-command_topic: "hall/light/lu-hall/cmnd/Backlog"
+name: ld_entrance
+command_topic: "hall/light/ld-entrance/cmnd/Backlog"
 command_on_template: "Power 1"
 command_off_template: "Power 0"
-state_topic: "hall/light/lu-hall/stat/RESULT"
+state_topic: "hall/light/ld-entrance/stat/RESULT"
 state_template: >-
   {% if value_json.POWER is defined %}
     {{ value_json.POWER | lower }}
   {% else %}
-    {{ states('light.lu_hall') }}
+    {{ states('light.ld_entrance') }}
   {%- endif -%}
-availability_topic: "hall/light/lu-hall/tele/LWT"
+availability_topic: "hall/light/ld-entrance/tele/LWT"
 payload_available: "Online"
 payload_not_available: "Offline"
-json_attributes_topic: "hall/light/ld-hall/tele/STATE"
+json_attributes_topic: "hall/light/ld-entrance/tele/STATE"
 json_attributes_template: '{{ value_json.Wifi | tojson }}'
 qos: 1
 retain: false
