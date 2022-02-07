@@ -174,6 +174,48 @@ cards:
           mode: toggle
   - type: vertical-stack
     view_layout:
+      grid-area: kids-bed-room
+    keep: 
+      background: true
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Kids Bed Room
+      - type: custom:slider-button-card
+        entity: light.lu_kids_main_ch1
+        name: Main warm
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+      - type: custom:slider-button-card
+        entity: light.lu_kids_main_ch2
+        name: Main cold
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+      - type: custom:slider-button-card
+        entity: light.lu_kids_color
+        name: Color
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+  - type: vertical-stack
+    view_layout:
       grid-area: outdoor
     keep: 
       background: true

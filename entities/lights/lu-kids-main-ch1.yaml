@@ -1,0 +1,35 @@
+platform: mqtt
+schema: template
+name: lu-kids-main-ch1
+command_topic: "kids-bed-room/light/lu-kids-main/cmnd/Backlog"
+command_on_template: >-
+  {% if state is defined %}
+  Power1 1;
+  {%- endif -%} 
+  {% if brightness is defined %}
+  Channel1 {{ (brightness / 2.55) | int }}
+  {% else %}
+  Channel1
+  {%- endif -%}
+command_off_template: "Power1 0"
+state_topic: "kids-bed-room/light/lu-kids-main/stat/RESULT"
+state_template: >-
+  {% if value_json.POWER1 is defined %}
+    {{ value_json.POWER1 | lower }}
+  {% else %}
+    {{ states('light.lu_kids_main_ch1') }}
+  {%- endif -%}
+brightness_template: >-
+  {% if value_json.Channel1 is defined %}
+    {{  (value_json.Channel1 * 2.55) | int }}
+  {% else %}
+    {% set brightness=state_attr('light.lu_kids_main_ch1', 'brightness') %}
+    {{ brightness if brightness != None else 0 }}
+  {%- endif -%}
+availability_topic: "kids-bed-room/light/lu-kids-main/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+json_attributes_topic: "kids-bed-room/light/lu-kids-main/tele/STATE"
+json_attributes_template: '{{ value_json.Wifi | tojson }}'
+qos: 1
+retain: false

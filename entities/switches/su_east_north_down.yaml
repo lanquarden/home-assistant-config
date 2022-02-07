@@ -1,0 +1,11 @@
+platform: mqtt
+name: su_east_north_down
+state_topic: "kids-bed-room/shutter/su-east-north/stat/POWER1"
+command_topic: "kids-bed-room/shutter/su-east-north/cmnd/POWER1"
+payload_on: "ON"
+payload_off: "OFF"
+availability_topic: "kids-bed-room/shutter/su-east-north/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false
