@@ -1,0 +1,6 @@
+---
+# Enables the energy dashboard
+#
+# https://www.home-assistant.io/home-energy-management/
+
+energy:

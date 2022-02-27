@@ -1,0 +1,7 @@
+platform: mqtt
+device_class: battery
+state_class: measurement
+expire_after: 4
+name: battery_soc
+unit_of_measurement: '%'
+state_topic: energy/battery/soc

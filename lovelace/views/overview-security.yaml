@@ -8,36 +8,36 @@ layout:
   grid-template-columns: 25% 25% 25% 25%
   grid-template-rows: auto
   grid-template-areas: |
-    "office office . ."
+    "doorbell doorbell . ."
   mediaquery:
     "(max-width: 600px)":
       grid-template-columns: 100%
       grid-template-areas: |
-        "office"
+        "doorbell"
     "(max-width: 900px)": 
       grid-template-columns: 50% 50%
       grid-template-areas: |
-        "office office"
+        "doorbell doorbell"
     "(max-width: 1600px)": 
       grid-template-columns: 33% 33% 33%
       grid-template-areas: |
-        "office . ."
+        "doorbell . ."
 cards:
   - type: vertical-stack
     view_layout:
-      grid-area: office
+      grid-area: doorbell
     cards:
       - type: 'custom:button-card'
         template: header
-        name: Office
+        name: Door
       - type: picture-entity
         camera_view: live
-        entity: camera.office
+        entity: camera.doorbell
         show_name: true
       - type: 'custom:button-card'
         template: header
         name: Test
       - type: 'glance'
         entities:
-          - entity: camera.office_person
+          - entity: camera.doorbell_person
             name: Last person

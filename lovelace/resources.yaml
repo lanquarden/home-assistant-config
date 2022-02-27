@@ -12,3 +12,6 @@
 
 - url: /hacsfiles/slider-button-card/slider-button-card.js
   type: module
+
+- url: /hacsfiles/tesla-style-solar-power-card/tesla-style-solar-power-card.js
+  type: module

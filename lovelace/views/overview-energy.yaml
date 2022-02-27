@@ -1,0 +1,18 @@
+title: Energy
+path: energy
+icon: mdi:lightning-bolt
+badges: []
+cards:
+  - type: 'custom:tesla-style-solar-power-card'
+    name: Power flow
+    generation_to_house_entity: sensor.solar_to_house_power
+    generation_to_battery_entity: sensor.solar_to_battery_power
+    battery_to_house_entity: sensor.battery_to_house_power
+    battery_extra_entity: sensor.battery_soc
+    grid_to_house_entity: sensor.grid_to_house_power
+    grid_to_battery_entity: sensor.grid_to_battery_power
+    show_w_not_kw: 1
+    grid_icon: 'mdi:transmission-tower'
+    generation_icon: 'mdi:solar-panel-large'
+    house_icon: 'mdi:home'
+    battery_icon: 'mdi:battery'

@@ -1,0 +1,7 @@
+platform: mqtt
+device_class: power
+state_class: measurement
+expire_after: 4
+name: battery_export_power
+unit_of_measurement: W
+state_topic: energy/flow/battery_export_power
