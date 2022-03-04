@@ -9,7 +9,7 @@ layout:
   grid-template-areas: |
     "hall living-room kitchen ."
     "master-bed-room kids-bed-room guest-bed-room attic"
-    "outdoor . . ."
+    "porch outdoor . ."
   mediaquery:
     "(max-width: 600px)":
       grid-template-columns: 100%
@@ -21,6 +21,7 @@ layout:
         "kids-bed-room"
         "guest-bed-room"
         "attic"
+        "porch"
         "outdoor"
     "(max-width: 900px)": 
       grid-template-columns: 50% 50%
@@ -29,14 +30,14 @@ layout:
         "kitchen ."
         "master-bed-room kids-bed-room"
         "guest-bed-room attic"
-        "outdoor"
+        "porch outdoor"
     "(max-width: 1600px)": 
       grid-template-columns: 33% 33% 33%
       grid-template-areas: |
         "hall living-room kitchen"
         "master-bed-room kids-bed-room guest-bed-room"
         "attic . ."
-        "outdoor"
+        "porch outdoor ."
 cards:
   - type: vertical-stack
     view_layout:
@@ -206,6 +207,59 @@ cards:
       - type: custom:slider-button-card
         entity: light.lu_kids_color
         name: Color
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+  - type: vertical-stack
+    view_layout:
+      grid-area: porch
+    keep: 
+      background: true
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Porch
+      - type: custom:slider-button-card
+        entity: light.ld_porch_north_ch2
+        name: Porch 1 warm
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+      - type: custom:slider-button-card
+        entity: light.ld_porch_north_ch1
+        name: Porch 1 cold
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+      - type: custom:slider-button-card
+        entity: light.ld_porch_north_ch4
+        name: Porch 2 warm
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+      - type: custom:slider-button-card
+        entity: light.ld_porch_north_ch3
+        name: Porch 3 cold
         slider:
           direction: left-right
           background: gradient
