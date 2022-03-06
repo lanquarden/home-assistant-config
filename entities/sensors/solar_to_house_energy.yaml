@@ -1,0 +1,7 @@
+platform: integration
+source: sensor.solar_to_house_power
+name: solar_to_house_energy
+unit_time: h
+unit_prefix: k
+method: left
+round: 2

@@ -1,0 +1,7 @@
+platform: mqtt
+device_class: energy
+state_class: total
+expire_after: 60
+name: circuit_lights
+unit_of_measurement: kWh
+state_topic: energy/circuits/orno1p1-4/Sum

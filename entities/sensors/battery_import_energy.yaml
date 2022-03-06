@@ -1,0 +1,7 @@
+platform: integration
+source: sensor.battery_import_power
+name: battery_import_energy
+unit_time: h
+unit_prefix: k
+method: left
+round: 2

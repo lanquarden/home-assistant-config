@@ -1,0 +1,7 @@
+platform: integration
+source: sensor.house_import_power
+name: house_import_energy
+unit_time: h
+unit_prefix: k
+method: left
+round: 2

@@ -1,0 +1,7 @@
+platform: integration
+source: sensor.grid_to_house_power
+name: grid_to_house_energy
+unit_time: h
+unit_prefix: k
+method: left
+round: 2
