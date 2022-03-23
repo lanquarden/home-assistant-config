@@ -7,6 +7,7 @@ cards:
     name: Power flow
     generation_to_house_entity: sensor.solar_to_house_power
     generation_to_battery_entity: sensor.solar_to_battery_power
+    generation_to_grid_entitiy: sensor.solar_to_grid_power
     battery_to_house_entity: sensor.battery_to_house_power
     battery_extra_entity: sensor.battery_soc
     grid_to_house_entity: sensor.grid_to_house_power

@@ -1,0 +1,7 @@
+platform: mqtt
+device_class: power
+state_class: measurement
+expire_after: 4
+name: grid_import_power
+unit_of_measurement: W
+state_topic: energy/flow/grid_import_power

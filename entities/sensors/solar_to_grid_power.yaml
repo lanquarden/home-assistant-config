@@ -1,0 +1,7 @@
+platform: mqtt
+device_class: power
+state_class: measurement
+expire_after: 4
+name: solar_to_grid_power
+unit_of_measurement: W
+state_topic: energy/flow/solar_to_grid_power

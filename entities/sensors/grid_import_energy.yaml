@@ -1,0 +1,7 @@
+platform: integration
+source: sensor.grid_import_power
+name: grid_import_energy
+unit_time: h
+unit_prefix: k
+method: left
+round: 2
