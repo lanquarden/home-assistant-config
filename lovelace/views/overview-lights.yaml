@@ -67,6 +67,17 @@ cards:
             template: switch_button
             entity: light.lu_stairs
             icon: mdi:stairs-up
+      - type: custom:slider-button-card
+        entity: light.ld_hall
+        name: Entance
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
   - type: vertical-stack
     view_layout:
       grid-area: living-room
@@ -77,7 +88,7 @@ cards:
         template: header
         name: Living-room
       - type: custom:slider-button-card
-        entity: light.ld_hall_ch2
+        entity: light.ld_hall_tv
         name: Sofa warm
         slider:
           direction: left-right
@@ -88,8 +99,8 @@ cards:
         action_button:
           mode: toggle
       - type: custom:slider-button-card
-        entity: light.ld_hall_ch1
-        name: Sofa cold
+        entity: light.ld_living_room_1
+        name: Middle
         slider:
           direction: left-right
           background: gradient
@@ -99,41 +110,8 @@ cards:
         action_button:
           mode: toggle
       - type: custom:slider-button-card
-        entity: light.ld_living_room_ch2
-        name: Middle warm
-        slider:
-          direction: left-right
-          background: gradient
-        icon:
-          tap_action:
-            action: more-info
-        action_button:
-          mode: toggle
-      - type: custom:slider-button-card
-        entity: light.ld_living_room_ch1
-        name: Middle cold
-        slider:
-          direction: left-right
-          background: gradient
-        icon:
-          tap_action:
-            action: more-info
-        action_button:
-          mode: toggle
-      - type: custom:slider-button-card
-        entity: light.ld_living_room_ch4
-        name: Dining warm
-        slider:
-          direction: left-right
-          background: gradient
-        icon:
-          tap_action:
-            action: more-info
-        action_button:
-          mode: toggle
-      - type: custom:slider-button-card
-        entity: light.ld_living_room_ch3
-        name: Dining cold
+        entity: light.ld_living_room_2
+        name: Dining
         slider:
           direction: left-right
           background: gradient
@@ -152,19 +130,8 @@ cards:
         template: header
         name: Kitchen
       - type: custom:slider-button-card
-        entity: light.ld_kitchen_ch1
-        name: Kitchen warm
-        slider:
-          direction: left-right
-          background: gradient
-        icon:
-          tap_action:
-            action: more-info
-        action_button:
-          mode: toggle
-      - type: custom:slider-button-card
-        entity: light.ld_kitchen_ch2
-        name: Kitchen cold
+        entity: light.ld_kitchen_main
+        name: Kitchen main
         slider:
           direction: left-right
           background: gradient
@@ -225,8 +192,8 @@ cards:
         template: header
         name: Porch
       - type: custom:slider-button-card
-        entity: light.ld_porch_north_ch2
-        name: Porch 1 warm
+        entity: light.ld_porch_north_2
+        name: Porch 1
         slider:
           direction: left-right
           background: gradient
@@ -236,8 +203,8 @@ cards:
         action_button:
           mode: toggle
       - type: custom:slider-button-card
-        entity: light.ld_porch_north_ch1
-        name: Porch 1 cold
+        entity: light.ld_porch_north_1
+        name: Porch 2
         slider:
           direction: left-right
           background: gradient
@@ -247,8 +214,8 @@ cards:
         action_button:
           mode: toggle
       - type: custom:slider-button-card
-        entity: light.ld_porch_north_ch4
-        name: Porch 2 warm
+        entity: light.ld_porch_south_2
+        name: Porch 3
         slider:
           direction: left-right
           background: gradient
@@ -258,8 +225,8 @@ cards:
         action_button:
           mode: toggle
       - type: custom:slider-button-card
-        entity: light.ld_porch_north_ch3
-        name: Porch 3 cold
+        entity: light.ld_porch_south_1
+        name: Porch 4
         slider:
           direction: left-right
           background: gradient

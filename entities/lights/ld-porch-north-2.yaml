@@ -1,0 +1,75 @@
+platform: mqtt
+schema: template
+name: ld_porch_north_2
+command_topic: "porch/light/ld-porch-north/cmnd/Backlog"
+command_on_template: >-
+  {% if state is defined %}
+  Var5 1
+  {%- endif -%} 
+  {%- if brightness is defined -%}
+  ;Var6 {{ (brightness / 2.55) | int }}
+  {%- endif -%}
+  {%- if color_temp is defined and state_attr('light.ld_porch_north_2', 'effect') == "Manual CT" -%}
+  ;Var7 {{ (100 - (color_temp - 166) * 100.0 / (333 - 166)) | int }}
+  {%- endif -%}
+  {%- if effect is defined -%}
+    {%- if effect == "Auto CT" -%}
+    ;Var8 0
+    {%- elif effect == "Manual CT" -%}
+    ;Var8 1
+    {%- else -%}
+    ;Var8 2
+    {%- endif -%}
+  {% endif %}
+command_off_template: "Var5 0"
+state_topic: "porch/light/ld-porch-north/hass"
+state_template: >-
+  {% if value_json.Var5 is defined %}
+    {% if value_json.Var5 == "1" %}
+    on
+    {% else %}
+    off
+    {% endif %}
+  {% else %}
+    {{ states('light.ld_porch_north_2') }}
+  {%- endif -%}
+brightness_template: >-
+  {% if value_json.Var6 is defined %}
+    {{  ((value_json.Var6 | float) * 2.55) | int }}
+  {% else %}
+    {% set brightness=state_attr('light.ld_porch_north_2', 'brightness') %}
+    {{ brightness if brightness != None else 0 }}
+  {%- endif -%}
+max_mireds: 333
+min_mireds: 166
+color_temp_template: >-
+  {% if value_json.Var7 is defined %}
+    {{ (333 - (value_json.Var7 | float) * (333 - 166) / 100.0) | int }}
+  {% else %}
+    {% set color_temp=state_attr('light.ld_porch_north_2', 'color_temp') %}
+    {{ color_temp if color_temp != None else 333 }}
+  {%- endif -%}
+effect_list:
+  - "Auto CT"
+  - "Manual CT"
+  - "Boost"
+effect_template: >-
+  {% if value_json.Var8 is defined %}
+    {% if value_json.Var8 == "0" %}
+    Auto CT
+    {% elif value_json.Var8 == "1" %}
+    Manual CT
+    {% else %}
+    Boost
+    {% endif %}
+  {% else %}
+    {% set effect=state_attr('light.ld_porch_north_2', 'effect') %}
+    {{ effect if effect != None else "Auto CT" }}
+  {%- endif -%}
+availability_topic: "porch/light/ld-porch-north/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+json_attributes_topic: "porch/light/ld-porch-north/tele/STATE"
+json_attributes_template: '{{ value_json.Wifi | tojson }}'
+qos: 1
+retain: false
