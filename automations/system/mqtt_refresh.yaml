@@ -11,7 +11,7 @@ action:
   - service: mqtt.publish
     data:
       topic: "lights/cmnd/Backlog"
-      payload: "State"
+      payload: "Event myState"
   - service: mqtt.publish
     data:
       topic: "shutters/cmnd/Backlog"
