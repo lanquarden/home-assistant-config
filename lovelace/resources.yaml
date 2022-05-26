@@ -15,3 +15,6 @@
 
 - url: /hacsfiles/tesla-style-solar-power-card/tesla-style-solar-power-card.js
   type: module
+   
+- url: /hacsfiles/frigate-hass-card/frigate-hass-card.js
+  type: module

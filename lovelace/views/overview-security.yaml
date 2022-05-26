@@ -8,36 +8,48 @@ layout:
   grid-template-columns: 25% 25% 25% 25%
   grid-template-rows: auto
   grid-template-areas: |
-    "doorbell doorbell . ."
+    "doorbell living-room garden ."
   mediaquery:
     "(max-width: 600px)":
       grid-template-columns: 100%
       grid-template-areas: |
         "doorbell"
+        "living-room"
+        "garden"
     "(max-width: 900px)": 
       grid-template-columns: 50% 50%
       grid-template-areas: |
-        "doorbell doorbell"
+        "doorbell living-room"
+        "garden ."
     "(max-width: 1600px)": 
       grid-template-columns: 33% 33% 33%
       grid-template-areas: |
-        "doorbell . ."
+        "doorbell living-room garden"
 cards:
   - type: vertical-stack
     view_layout:
       grid-area: doorbell
     cards:
-      - type: 'custom:button-card'
-        template: header
-        name: Door
-      - type: picture-entity
-        camera_view: live
-        entity: camera.doorbell
-        show_name: true
-      - type: 'custom:button-card'
-        template: header
-        name: Test
-      - type: 'glance'
-        entities:
-          - entity: camera.doorbell_person
-            name: Last person
+      - type: custom:frigate-card
+        cameras:
+          - camera_entity: camera.doorbell
+            live_provider: ha
+            title: Doorbell
+  - type: vertical-stack
+    view_layout:
+      grid-area: living-room
+    cards:
+      - type: custom:frigate-card
+        cameras:
+          - camera_entity: camera.living_room
+            live_provider: ha
+            title: Living Room
+  - type: vertical-stack
+    view_layout:
+      grid-area: garden
+    cards:
+      - type: custom:frigate-card
+        cameras:
+          - camera_entity: camera.garden
+            live_provider: ha
+            title: Garden
