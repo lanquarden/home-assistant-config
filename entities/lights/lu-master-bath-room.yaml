@@ -1,0 +1,20 @@
+platform: mqtt
+schema: template
+name: lu_master_bath_room
+command_topic: "master-bed-room/light/lu-master-bath-room/cmnd/Backlog"
+command_on_template: "Power 1"
+command_off_template: "Power 0"
+state_topic: "master-bed-room/light/lu-master-bath-room/stat/RESULT"
+state_template: >-
+  {% if value_json.POWER is defined %}
+    {{ value_json.POWER | lower }}
+  {% else %}
+    {{ states('light.lu_master_bath_room') }}
+  {%- endif -%}
+availability_topic: "master-bed-room/light/lu-master-bath-room/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+json_attributes_topic: "master-bed-room/light/lu-master-bath-room/tele/STATE"
+json_attributes_template: '{{ value_json.Wifi | tojson }}'
+qos: 1
+retain: false

@@ -7,9 +7,9 @@ layout:
   grid-template-columns: 25% 25% 25% 25%
   grid-template-rows: auto
   grid-template-areas: |
-    "hall living-room kitchen ."
+    "hall kitchen living-room porch"
+    "hall outdoor living-room porch"
     "master-bed-room kids-bed-room guest-bed-room attic"
-    "porch outdoor . ."
   mediaquery:
     "(max-width: 600px)":
       grid-template-columns: 100%
@@ -17,27 +17,27 @@ layout:
         "hall"
         "living-room"
         "kitchen"
+        "porch"
         "master-bed-room"
         "kids-bed-room"
         "guest-bed-room"
         "attic"
-        "porch"
         "outdoor"
     "(max-width: 900px)": 
       grid-template-columns: 50% 50%
       grid-template-areas: |
-        "hall living-room
-        "kitchen ."
+        "hall living-room"
+        "kitchen living-room"
+        "porch outdoor"
         "master-bed-room kids-bed-room"
         "guest-bed-room attic"
-        "porch outdoor"
     "(max-width: 1600px)": 
       grid-template-columns: 33% 33% 33%
       grid-template-areas: |
-        "hall living-room kitchen"
+        "hall living-room porch"
+        "kitchen living-room porch"
         "master-bed-room kids-bed-room guest-bed-room"
-        "attic . ."
-        "porch outdoor ."
+        "attic outdoor ."
 cards:
   - type: vertical-stack
     view_layout:
@@ -69,7 +69,7 @@ cards:
             icon: mdi:stairs-up
       - type: custom:slider-button-card
         entity: light.ld_hall
-        name: Entance
+        name: Entrance
         slider:
           direction: left-right
           background: gradient
@@ -89,7 +89,7 @@ cards:
         name: Living-room
       - type: custom:slider-button-card
         entity: light.ld_hall_tv
-        name: Sofa warm
+        name: Sofa
         slider:
           direction: left-right
           background: gradient
@@ -142,6 +142,37 @@ cards:
           mode: toggle
   - type: vertical-stack
     view_layout:
+      grid-area: master-bed-room
+    keep: 
+      background: true
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Master Bed Room
+      - type: custom:slider-button-card
+        entity: light.lu_master_bed_main
+        name: Main
+        slider:
+          direction: left-right
+          background: gradient
+        icon:
+          tap_action:
+            action: more-info
+        action_button:
+          mode: toggle
+      - type: grid
+        columns: 4
+        cards:
+          - type: custom:button-card
+            template: switch_button
+            entity: light.lu_master_dressing
+            icon: mdi:wardrobe-outline
+          - type: custom:button-card
+            template: switch_button
+            entity: light.lu_master_bath_room
+            icon: mdi:shower-head
+  - type: vertical-stack
+    view_layout:
       grid-area: kids-bed-room
     keep: 
       background: true
@@ -182,6 +213,22 @@ cards:
             action: more-info
         action_button:
           mode: toggle
+  - type: vertical-stack
+    view_layout:
+      grid-area: guest-bed-room
+    keep: 
+      background: true
+    cards:
+      - type: 'custom:button-card'
+        template: header
+        name: Guest Bed Room
+      - type: grid
+        columns: 4
+        cards:
+          - type: custom:button-card
+            template: switch_button
+            entity: light.lu_guest_bed_ambient
+            icon: mdi:floor-lamp
   - type: vertical-stack
     view_layout:
       grid-area: porch

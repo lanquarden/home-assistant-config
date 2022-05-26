@@ -1,7 +1,7 @@
 platform: mqtt
 schema: template
-name: lu-kids-color
-command_topic: "kids-bed-room/light/lu-kids-color/cmnd/Backlog"
+name: lu_master_bed_color
+command_topic: "master-bed-room/light/lu-master-bed-color/cmnd/Backlog"
 command_on_template: >-
     {%- if flash is defined -%}
       {% if flash == "short" %}Blinktime 5; Blinkcount 15; Power 3{% else %}Blinktime 10; Blinkcount 15; Power 3{% endif %}; 
@@ -30,7 +30,7 @@ command_on_template: >-
       State
     {%- endif -%}
 command_off_template: "{% if transition is defined %}Speed {{ transition * 2 }}; Fade 1; Power0 0; Delay {% if transition < 21 %}{{ transition * 11 }}{% else %}210{% endif %}; Fade 0; Speed 0; {%- else -%}Power0 0{%- endif -%}; State"
-state_topic: "kids-bed-room/light/lu-kids-color/tele/STATE"
+state_topic: "master-bed-room/light/lu-master-bed-color/tele/STATE"
 effect_list:
   - "None"
   - "Wakeup"
@@ -38,7 +38,6 @@ effect_list:
   - "Reverse Cycle"
   - "Random"
 effect_template: >-
-  {% if value_json.Scheme is defined %}
   {% if value_json.Scheme == 0 %}
   None
   {% elif value_json.Scheme == 1 %}
@@ -50,16 +49,13 @@ effect_template: >-
   {% elif value_json.Scheme == 4 %}
   Random
   {% endif %}
-  {% else %}
-  None
-  {% endif %}
 state_template: '{% if value_json.POWER1 == "ON" or value_json.POWER2 == "ON" %}on{% else %}off{% endif %}'
 brightness_template: '{{ (value_json.Dimmer1 * 2.55) | int }}'
 red_template: '{{ value_json.Color[0:2] | int(base=16) }}'
 green_template: '{{ value_json.Color[2:4] | int(base=16) }}'
 blue_template: '{{ value_json.Color[4:6] | int(base=16) }}'
 white_value_template: '{{ (value_json.White * 2.55) | int }}'
-json_attributes_topic: "kids-bed-room/light/lu-kids-color/STATE"
+json_attributes_topic: "master-bed-room/light/lu-master-bed-color/STATE"
 json_attributes_template: '{{ value_json.Wifi | tojson }}'
 payload_available: "Online"
 payload_not_available: "Offline"
